@@ -5,16 +5,6 @@ export const GlobalStyles = createGlobalStyle`
   * {
       box-sizing: border-box;
   }
-  // body {
-  //   font-family: 'Montserrat', sans-serif;
-  //   background: #f6f5f7;
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: center;
-  //   align-items: center;
-  //   height: 100vh;
-  //   margin: -20px 0 50px;
-  // }
 `;
 
 export const OverlayContainer = styled.div`

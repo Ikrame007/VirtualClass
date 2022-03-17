@@ -1,7 +1,7 @@
 import React ,{useState} from 'react';
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { FirstSectionContainer,FirstSectionBg,VideoBg,SectionContent,SectionH1,SectionP,SectionBtnWrapper,ArrowForward,ArrowRight } from './FirstElements';
 import video from '../../assets/videos/videob.mp4';
-// import { hover } from '@testing-library/user-event/dist/hover';
 import { Button } from '../ButtonElements';
 
 
@@ -21,9 +21,10 @@ const onHover = () => {
               <SectionH1>Aspire, Learn, Advance</SectionH1>
               <SectionP>Build your practical skills by enrolling in advanced training programs, and gain certificates that help you enter the labor market and develop your career.</SectionP>
               <SectionBtnWrapper>
-                  <Button to='signup' onMouseEnter={onHover} onMouseLeave={onHover} >
+                <a href="/auth">Get Started {hover ? <ArrowForward /> : <ArrowRight />}</a>
+                  {/* <Button to='auth' onMouseEnter={onHover} onMouseLeave={onHover} >
                       Get Started {hover ? <ArrowForward /> : <ArrowRight />}
-                  </Button>
+                  </Button> */}
               </SectionBtnWrapper>
           </SectionContent>
       </FirstSectionContainer>

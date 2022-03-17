@@ -1,4 +1,3 @@
-
 import homeObjOneImg from "../../assets/images/svg-1.svg";
 import homeObjTwoImg from "../../assets/images/svg-2.svg";
 import homeObjThreeImg from "../../assets/images/svg-3.svg";
@@ -42,7 +41,7 @@ export const homeObjTwo ={
     dark:false,
     primary:true,
     darkText:true,
-    tolink:'/'
+    tolink:'/Categories'
 };
 
 export const homeObjThree ={
@@ -62,7 +61,7 @@ export const homeObjThree ={
     dark:false,
     primary:false,
     darkText:false,
-    tolink:'/Courses'
+    tolink:'/Certificates'
 };
 // data prof
 
@@ -82,7 +81,7 @@ export const homeObjProf1 ={
     dark:false,
     primary:false,
     darkText:false,
-    tolink:'/Courses'
+    tolink:'/DiscoverEditor'
 };
 
 export const homeObjProf2 ={
@@ -102,5 +101,5 @@ export const homeObjProf2 ={
     dark:false,
     primary:true,
     darkText:true,
-    tolink:'/'
+    tolink:'/Templates'
 };
