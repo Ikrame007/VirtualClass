@@ -1,0 +1,47 @@
+.image {
+  margin: 5%;
+  height: 25rem;
+  width: 95%;
+  box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.253) !important;
+}
+
+.new-details {
+  padding-top: 2rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-bottom: 4rem;
+}
+.desc{
+    color: #6a6f73;
+}
+.right {
+  position: absolute;
+  right: 4rem;
+}
+
+.btn-new{
+    position: absolute;
+    right: 4rem;
+    min-width: 4rem;
+    background-color: #e91e63;
+    color: white;
+    border-radius: 20rem;
+    border-style: none;
+    font-size: 14px;
+    text-decoration: solid;
+}
+.btn-checked{
+    background-color: #220bab;
+    border-radius: 0.4rem;
+    border-style: none;
+    color: white;
+    font-size: 18px;
+    text-decoration: solid;
+    width: 15rem;
+    height: 3rem;
+  
+}
+.btn-checked:hover{
+    background-color: #e91e63;
+
+}

@@ -1,0 +1,60 @@
+.card {
+  width: 20rem;
+  /* height: 40rem; */
+  margin-bottom: 0.5rem;
+}
+
+.card:hover {
+  box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.253) !important;
+}
+
+.card-body {
+  padding: 1rem 0 !important;
+}
+.text-body {
+  margin-top: 1rem;
+}
+.card-text {
+  font-size: 0.9rem;
+  padding: 0.4rem 1.9rem;
+}
+
+.btn-price {
+  width: 5rem;
+  background-color: rgb(216, 213, 213);
+  color: white;
+  border-radius: 20rem;
+  border-style: none;
+  font-size: 16px;
+  text-decoration: solid;
+}
+.btn-categorie {
+  /* margin-left: 220%; */
+  position: absolute;
+  right: 1rem;
+  min-width: 5rem;
+  background-color: #e91e63;
+  color: white;
+  border-radius: 20rem;
+  border-style: none;
+  font-size: 14px;
+  text-decoration: solid;
+}
+.btn-checking {
+  border-color: rgba(34, 11, 173, 0.75);
+  color: rgb(34, 11, 173);
+  visibility: visible;
+  background-color: transparent;
+  /* background-color: #220bab; */
+  border-radius: 0.4rem;
+  /* border-style: none;
+  color: white; */
+  font-size: 14px;
+  text-decoration: solid;
+  width: 8rem;
+  height: 2rem;
+}
+.btn-checking:hover {
+  color: white;
+  background-color: #220bab;
+}
