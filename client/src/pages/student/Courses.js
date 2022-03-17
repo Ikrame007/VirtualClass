@@ -13,7 +13,7 @@ import Selector from '../../components/Courses/Selector/Selector';
 import List from '../../components/Courses/List/List';
 import SearchBar from '../../components/SearchBar/SearchBar';
 
-import '../../styles/student/Courses.scss';
+import '../../components/Courses/Courses.scss';
 import 'bootstrap/dist/css/bootstrap.css';
 import imgtest1 from '../../assets/images/node-js-training-institute.jpg';
 import imgtest2 from '../../assets/images/react-js-training.jpg';
