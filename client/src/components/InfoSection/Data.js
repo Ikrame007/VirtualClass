@@ -20,7 +20,7 @@ export const homeObjOne ={
     dark:false,
     primary:false,
     darkText:false,
-    tolink:'/Courses'
+    tolink:'/courses'
 };
 
 

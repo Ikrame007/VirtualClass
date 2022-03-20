@@ -4,6 +4,7 @@ import DiscoverProf from "./pages/prof/DiscoverProf";
 import Home from "./pages/Home"
 import Courses from './pages/student/Courses';
 import Auth from "./pages/auth/Auth";
+import Dashboard from "./components/Dashboard";
 // import { About } from "./components/Pages/About";
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
           <Route path="/" element={< Home/>} />
           <Route path="/discoverstudent" element={< DiscoverStudent/>} />
           <Route path="/discoverteacher" element={< DiscoverProf/>} />
-          <Route path="/Courses" element={< Courses/>} />
+          <Route path="/courses" element={< Courses/>} />
           <Route path="/auth" element={< Auth/>} />
 
         </Routes>
