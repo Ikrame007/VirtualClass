@@ -1,5 +1,5 @@
 import React from 'react'
-import Dashboard from '../../components/Dashboard';
+import DashboardProf from '../../components/DashbordProf';
 
 
 
@@ -8,7 +8,7 @@ const Dashboard = () => {
   return (
     <>
 
-    <Dashboard />
+    <DashboardProf />
    
     </>
    
