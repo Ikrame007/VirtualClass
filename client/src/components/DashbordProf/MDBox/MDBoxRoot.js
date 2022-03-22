@@ -22,9 +22,9 @@ export default styled(Box)(({ theme, ownerState }) => {
   const { variant, bgColor, color, opacity, borderRadius, shadow, coloredShadow } = ownerState;
 
   const { gradients, grey, white } = palette;
-  const { linearGradient } = functions;
-  const { borderRadius: radius } = borders;
-  const { colored } = boxShadows;
+  const { linearGradient } = functions || {};
+  const { borderRadius: radius } = borders || {};
+  const { colored } = boxShadows || {};
 
   const greyColors = {
     "grey-100": grey[100],

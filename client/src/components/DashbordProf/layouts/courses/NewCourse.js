@@ -37,7 +37,7 @@ function NewCourse() {
     {
       pseudo: "Amal Kalim",
       action: (
-        <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
+        <MDTypography component="a" to="#" variant="caption" color="text" fontWeight="medium">
           Remove
         </MDTypography>
       ),
