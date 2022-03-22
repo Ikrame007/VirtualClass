@@ -1,9 +1,13 @@
 import React, { useState } from "react";
+import { connect } from 'react-redux';
+
 // import { Routes ,Route } from 'react-router-dom';
 import "./style.css" ;
 import { BrowserRouter as Router, Switch, Route ,Link} from "react-router-dom";
+import { setRole } from '../../redux/actions/authActions';
 
-function FirstPage ()  {
+
+function FirstPage (props)  {
 
   const [click, setClick] = useState(false);
 
@@ -38,12 +42,12 @@ function FirstPage ()  {
         
                 <div className="split left">
                   <p  className="text1">Learn a course</p>
-                  <Link to="/discoverstudent"   className="button">Discover As Student</Link>
+                  <Link to="/student/discover" onClick={() => props.dispatch(setRole('student'))} className="button">Discover As Student</Link>
                 </div>
                 <div className="split right">
             
                   <p className="text1">Publish a course</p>
-                  <Link to="/discoverteacher"   className="button">Discover As Teacher</Link>
+                  <Link to="/professor/discover" onClick={() => props.dispatch(setRole('professor'))} className="button">Discover As Teacher</Link>
                 </div>
               
         </div>
@@ -51,4 +55,10 @@ function FirstPage ()  {
   )
 }
 
-export default FirstPage;
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+  currentRole: state.auth.currentRole,
+  courses: state.courses,
+
+})
+export default connect(mapStateToProps)(FirstPage);

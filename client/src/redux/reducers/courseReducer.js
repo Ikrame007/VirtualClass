@@ -1,9 +1,8 @@
-import { getAllCourses } from "../actions/courseActions";
-import { GET_ALL_COURSES, FILTER_COURSES, FILTER_COURSES_BY_DIFFICULTY,FILTER_COURSES_BY_PRICE, FILTER_COURSES_BY_TIME } from '../actions/types';
+import { GET_ALL_COURSES, SELECT_COURSE, REMOVE_SELECTED_COURSE, FILTER_COURSES, FILTER_COURSES_BY_DIFFICULTY,FILTER_COURSES_BY_PRICE, FILTER_COURSES_BY_TIME } from '../actions/types';
 
 
 const initialState = {
-    courses: [{
+    /* courses: [{
         id: 1,
         name: 'React.js',
         instructor: 'Jean Guillaume',
@@ -83,7 +82,7 @@ const initialState = {
         difficulty: 'normal',
         time: 'short'
 
-    }],
+    }], */
     topCourses: [],
     freeCourses: [],
     filteredCourses: [],
@@ -92,14 +91,21 @@ const initialState = {
     price:'',
     time: '',
     hidden: false,
+    courses: [],
+    selectedCourse: {}
 
 
 }
 
+
 export const courseReducer = (state = initialState, { type, payload }) => {
     switch (type) {
         case GET_ALL_COURSES:
-            return state;
+            return { ...state, courses: payload };
+        case SELECT_COURSE:
+            return { ...state, selectedCourse: payload };
+        case REMOVE_SELECTED_COURSE:
+            return { };
         case FILTER_COURSES:
             return { ...state, filteredCourses: payload.filteredCourses, filter: payload.filter, hidden:payload.hidden };
         case FILTER_COURSES_BY_DIFFICULTY:
@@ -112,3 +118,6 @@ export const courseReducer = (state = initialState, { type, payload }) => {
             return state;
     }
 }
+
+
+

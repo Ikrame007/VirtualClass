@@ -1,4 +1,6 @@
-import { GET_ALL_COURSES, FILTER_COURSES, FILTER_COURSES_BY_DIFFICULTY, FILTER_COURSES_BY_PRICE, FILTER_COURSES_BY_TIME } from './types';
+import { COURSES_ERROR, GET_ALL_COURSES, SELECT_COURSE, REMOVE_SELECTED_COURSE, FILTER_COURSES, FILTER_COURSES_BY_DIFFICULTY, FILTER_COURSES_BY_PRICE, FILTER_COURSES_BY_TIME } from './types';
+import axios from 'axios';
+
 
 const priceFilter = (price, courses) => {
     if (price === 'free') {
@@ -30,13 +32,35 @@ const timeFilter = (time, courses) => {
     return [];
 
 }
-export const getAllCourses = (courses) => {
-    return {
-        type: GET_ALL_COURSES,
-        payload: courses,
-    };
+
+export const getAllCourses = () => async dispatch => {
+    try{
+        
+        const res = await axios.get(`http://localhost:9090/courses-service/api/courses`)
+        dispatch( {
+            type: GET_ALL_COURSES,
+            payload: res.data.courses
+        })
+    }
+    catch(e){
+        dispatch( {
+            type: COURSES_ERROR,
+            payload: console.log(e),
+        })
+        
+    }
 };
 
+
+
+export const selectCourse = (course) => ({
+    type: SELECT_COURSE,
+    payload: course
+});
+export const removeSelectedCourse = () => ({
+    type: REMOVE_SELECTED_COURSE,
+   
+});
 
 export const filterCourses = (courses, filter) => (dispatch) => {
     dispatch({
@@ -45,7 +69,7 @@ export const filterCourses = (courses, filter) => (dispatch) => {
             filter: filter,
             hidden: filter === "" ? false : true,
             filteredCourses: filter === "" ? [] : courses.filter((course) =>
-                course.name
+                course.title
                     .toString()
                     .toLowerCase()
                     .includes(filter.toString().toLowerCase())

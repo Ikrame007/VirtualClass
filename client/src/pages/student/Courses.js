@@ -64,7 +64,8 @@ const Courses = (props) => {
                             props.courses.map((course) => (
                                 <Carousel.Item interval={1500}>
                                     <NewCourse
-                                        name={course.name}
+                                        id={course._id}
+                                        title={course.title}
                                         description={course.description}
                                         instructor={course.instructor}
                                         price={course.price}

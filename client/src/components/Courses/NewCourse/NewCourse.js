@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import imgtest1 from '../../../assets/images/node-js-training-institute.jpg';
 /* import imgtest1 from '../assets/images/react-js-training.jpg'; */
 import './NewCourse.scss'
@@ -14,12 +16,13 @@ const NewCourse = (course) => {
             <div className="col-6   new-details">
                 <span className="btn btn-sm "><button className="btn-new ">New</button> </span><br /><br />
                 <div className="text-start">
-                    <h2 className="">{course.name} | {course.category}</h2>
+                    <h2 className="">{course.title} | {course.category}</h2>
                     <p className='desc '>{course.description}</p>
                     <p className="instructor desc">By {course.instructor}</p>
                     <Rating value={course.rate} /><br />
                     <h3 className=" ">{course.price} </h3><br />
-                    <span className="right"><button className='btn-checked'>Check Course</button></span>
+                    <Link to={`/student/courses/${course.id}`} style={{ textDecoration: "none" }}><span className="right"><button className='btn-checked'>Check Course</button></span>
+                    </Link>
                 </div>
             </div>
         </div>

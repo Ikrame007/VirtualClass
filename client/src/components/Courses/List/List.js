@@ -1,23 +1,33 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect, useDispatch } from 'react-redux';
+
 
 import imgtest2 from '../../../assets/images/react-js-training.jpg';
 import CardCourse from '../../Card/CardCourse';
 
-const List = ({courses}) => {
+
+
+const List = (props) => {
     return (
         <div className="row justify-content-around">
             {
-                courses.map((course) => (
+                props.courses.map((course) => (
                     <div className="col-md-4">
+                        <Link to={`/student/courses/${course._id}`} style={{ textDecoration: 'none'}}>
                         <CardCourse
                             key={course.id}
                             thumb={imgtest2}
-                            name={course.name}
+                            id={course._id}
+                            title={course.title}
                             instructor={course.instructor}
                             price={course.price}
                             rate={course.rate}
-                            category='Development Web'
+                            category={course.categories[0].categoryName}
+                           
                         />
+                        </Link>
+                        
                     </div>
                 ))
             }
@@ -26,6 +36,7 @@ const List = ({courses}) => {
         </div>
     );
 };
+
 
 
 export default List;
