@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { connect } from 'react-redux';
 
-import NavBar from '../../components/NavBar/NavBar';
+import NavBar1 from '../../components/NavBar/NavBar1';
 import Footer from '../../components/Footer';
 
 
@@ -54,7 +54,7 @@ const Courses = (props) => {
 
     return (
         <div>
-            <NavBar/>
+            <NavBar1/>
             {/*  <Navigation/> */}
             <div className="container-fluid tops">
                 {/* slider new courses */}

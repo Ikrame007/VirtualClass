@@ -1,5 +1,5 @@
 import React from 'react'
-import NavBar from '../../components/NavBar/NavBar'
+import NavBar2 from '../../components/NavBar/NavBar2'
 import FirstSection from '../../components/FirstSection'
 import InfoSection from '../../components/InfoSection'
 import { homeObjProf1, homeObjProf2} from '../../components/InfoSection/Data'
@@ -18,7 +18,7 @@ const DiscoverProf = () => {
   return (
     <>
 
-    <NavBar />
+    <NavBar2 />
     <FirstSection />
     <InfoSection {...homeObjProf1} />
     <InfoSection {...homeObjProf2} />

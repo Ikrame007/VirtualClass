@@ -1,5 +1,5 @@
 import React from 'react'
-import NavBar from '../../components/NavBar/NavBar'
+import NavBar1 from '../../components/NavBar/NavBar1'
 import { useState } from 'react'
 import FirstSection from '../../components/FirstSection'
 import InfoSection from '../../components/InfoSection'
@@ -19,7 +19,7 @@ const DiscoverStudent = () => {
   return (
     <>
 
-    <NavBar />
+    <NavBar1 />
     <FirstSection />
     <InfoSection {...homeObjOne} />
     <InfoSection {...homeObjTwo} />
