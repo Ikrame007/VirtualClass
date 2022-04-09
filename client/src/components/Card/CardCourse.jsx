@@ -18,7 +18,9 @@ const CardCourse = (course) => {
 
         <div className="text-center text-body">
           <h4 className="card-title ">{course.title}</h4>
-          <p className="instructor">By {course.instructor}</p>
+          <p className="instructor">
+            By {course.instructor}
+          </p>
           <Rating value={course.rate} />
           <p className="btn btn-md ">
             <button className="btn-price ">{course.price}</button>{" "}

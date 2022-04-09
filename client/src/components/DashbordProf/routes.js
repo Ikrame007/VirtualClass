@@ -30,7 +30,7 @@ const routes = [
     name: "Dashboard",
     key: "dashboard",
     icon: <Icon fontSize="small">dashboard</Icon>,
-    route: "/dashboard",
+    route: "/professor/dashboard",
     component: <Dashboard />,
   },
   {
@@ -38,7 +38,7 @@ const routes = [
     name: "Drafts",
     key: "drafts",
     icon: <Icon fontSize="small">drafts</Icon>,
-    route: "/mydrafts",
+    route: "/professor/drafts",
     component: <Drafts />,
   },
   {
@@ -46,7 +46,7 @@ const routes = [
     name: "Courses",
     key: "courses",
     icon: <Icon fontSize="small">book</Icon>,
-    route: "/mycourses",
+    route: "/professor/courses",
     component: <Courses />,
   },
   {
@@ -54,7 +54,7 @@ const routes = [
     name: "Billing",
     key: "billing",
     icon: <Icon fontSize="small">receipt_long</Icon>,
-    route: "/billing",
+    route: "/professor/billing",
     component: <Billing />,
   },
   {
@@ -62,7 +62,7 @@ const routes = [
     name: "Notifications",
     key: "notifications",
     icon: <Icon fontSize="small">notifications</Icon>,
-    route: "/notifications",
+    route: "/professor/notifications",
     component: <Notifications />,
   },
   {
@@ -70,7 +70,7 @@ const routes = [
     name: "Profile",
     key: "profile",
     icon: <Icon fontSize="small">person</Icon>,
-    route: "/profile",
+    route: "/professor/profile",
     component: <Profile />,
   },
 ];

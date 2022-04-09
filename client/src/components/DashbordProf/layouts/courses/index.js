@@ -36,9 +36,9 @@ function Courses(props) {
   /*  const { columns, rows } = coursesTableData(); */
   const columns = [
     { Header: "course", accessor: "course", width: "45%", align: "left" },
+    { Header: "category", accessor: "category", align: "center" },
     { Header: "price", accessor: "price", align: "center" },
     { Header: "participants", accessor: "participants", align: "center" },
-    { Header: "revenue", accessor: "revenue", align: "center" },
     { Header: "published", accessor: "published", align: "center" },
     { Header: "action", accessor: "action", align: "center" },
   ];
@@ -54,6 +54,11 @@ function Courses(props) {
     props.courses.map((course) => {
       return {
         course: <Course image={imgtest} name={course.title} />,
+        category: (
+          <MDTypography component="a" variant="caption" color="text" fontWeight="medium">
+            {course.categories[0].categoryName}
+          </MDTypography>
+        ),
         price: (
           <MDTypography component="a" variant="caption" color="text" fontWeight="medium">
             {course.price}
@@ -61,17 +66,12 @@ function Courses(props) {
         ),
         participants: (
           <MDTypography component="a" variant="caption" color="text" fontWeight="medium">
-            
-          </MDTypography>
-        ),
-        revenue: (
-          <MDTypography component="a" variant="caption" color="text" fontWeight="medium">
-            
+            0
           </MDTypography>
         ),
         published: (
           <MDTypography component="a" variant="caption" color="text" fontWeight="medium">
-            
+            {course.created_at}
           </MDTypography>
         ),
         action: (

@@ -21,11 +21,12 @@ const signUpRequest = () => {
     type: SIGN_UP_REQUEST,
   };
 };
-const signUpSuccess = (user) => {
+const signUpSuccess = (user, token) => {
   return {
     type: SIGN_UP_SUCCESS,
     payload: {
-      user,
+      token,
+      user
     },
   };
 };
@@ -36,7 +37,7 @@ const signUpFailure = (error) => {
   };
 };
 
-export const signUp = (user, history) => {
+export const signUp = (user, navigate) => {
   return function (dispatch) {
     dispatch(signUpRequest());
     axios({
@@ -45,9 +46,12 @@ export const signUp = (user, history) => {
       data: user,
     })
       .then((response) => {
-        const { data } = response.data;
-        dispatch(signUpSuccess(data));
-        /* history.push("/"); */
+        const { token, user } = response.data;
+        localStorage.setItem("USER-TOKEN", token);
+        const role = localStorage.getItem("USER-ROLE");
+        dispatch(signUpSuccess(token, user));
+        if (role == 'professor') navigate('/professor/dashboard')
+        else if (role == 'student') navigate('/student/courses')
       })
       .catch((error) => {
         console.log(error);

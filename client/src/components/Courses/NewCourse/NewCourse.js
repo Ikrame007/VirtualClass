@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import imgtest1 from '../../../assets/images/node-js-training-institute.jpg';
+import imgtest1 from '../../../assets/images/student.jpg';
 /* import imgtest1 from '../assets/images/react-js-training.jpg'; */
 import './NewCourse.scss'
 import Rating from '../../Card/Rating';

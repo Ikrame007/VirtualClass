@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { signIn } from "../../redux/actions/authActions";
+import { signUp } from "../../redux/actions/authActions";
 
 import login from '../../assets/images/login.svg';
 import register from '../../assets/images/register.svg';
@@ -25,6 +26,8 @@ function SignForm(props) {
     const navigate = useNavigate()
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
 
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
@@ -36,7 +39,12 @@ function SignForm(props) {
     const handleSignInClick = (event) => {
         event.preventDefault();
         const choosenRole = localStorage.getItem("USER-ROLE");
-        dispatch(signIn({ email, password, choosenRole }, navigate ));
+        dispatch(signIn({ email, password, choosenRole }, navigate));
+    };
+    const handleSignUpClick = (event) => {
+        event.preventDefault();
+        const role = localStorage.getItem("USER-ROLE");
+        dispatch(signUp({ firstName, lastName, email, password, role }, navigate));
     };
 
     const [panelActive, setPanelActive] = useState(false);
@@ -59,12 +67,31 @@ function SignForm(props) {
                 <FormContainer className="sign-up-container">
                     <Form action="#" onSubmit={e => e.preventDefault()}>
                         <Head>Create Account</Head><br></br>
-                        <Input type="text" placeholder="First Name" />
-                        <Input type="text" placeholder="Last Name" />
-                        <Input type="text" placeholder="Email" />
-                        <Input type="text" placeholder="Password" />
+                        <Input type="text"
+                            value={firstName}
+                            onChange={(event) => {
+                                setFirstName(event.target.value);
+                            }} placeholder="First Name" />
+                        <Input type="text" value={lastName}
+                            onChange={(event) => {
+                                setLastName(event.target.value);
+                            }} placeholder="Last Name" />
+
+                        {props.error ? <Input type="text" style={{ 'color': 'red' }} value={email}
+                            onChange={(event) => {
+                                setEmail(event.target.value);
+                            }} placeholder="Email" /> : <Input type="text" value={email}
+                                onChange={(event) => {
+                                    setEmail(event.target.value);
+                                }} placeholder="Email" />}
+
+                        <Input type="password" value={password}
+                            onChange={(event) => {
+                                setPassword(event.target.value);
+                            }} placeholder="Password" />
                         <br></br>
-                        <Button>Sign Up</Button>
+                        <Button onClick={handleSignUpClick}>Sign Up</Button>
+                        {props.error ? <span style={{ 'color': 'red' }}>User already exist! Please login.</span> : null}
                     </Form>
                 </FormContainer>
                 <FormContainer className="sign-in-container">
@@ -79,10 +106,12 @@ function SignForm(props) {
                             placeholder="Password"
                             value={password}
                             onChange={handlePasswordChange} />
-                        
+
 
                         <br></br>
                         <Button onClick={handleSignInClick}>Sign In</Button>
+                        {props.error ? <span style={{ 'color': 'red' }}>Login failed. Please check your role Or register for another account!</span> : null}
+
                     </Form>
                 </FormContainer>
                 <OverlayContainer>
@@ -115,5 +144,5 @@ function SignForm(props) {
 const mapStateToProps = (state) => ({
     currentRole: state.auth.currentRole,
     error: state.auth.error,
-  })
+})
 export default connect(mapStateToProps)(SignForm);

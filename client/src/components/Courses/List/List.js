@@ -20,7 +20,7 @@ const List = (props) => {
                             thumb={imgtest2}
                             id={course._id}
                             title={course.title}
-                            instructor={course.instructor}
+                            instructor={course.instructor.instructorName}
                             price={course.price}
                             rate={course.rate}
                             category={course.categories[0].categoryName}

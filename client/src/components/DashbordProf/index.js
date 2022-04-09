@@ -129,7 +129,7 @@ export default function DashboardProf() {
         )}
         <Routes>
           {getRoutes(routes)}
-          <Route path="*" element={<Navigate to="/dashboard" />} />
+          <Route path="*" element={<Navigate to="/professor/dashboard" />} />
         </Routes>
       </ThemeProvider>
     </CacheProvider>
@@ -148,7 +148,7 @@ export default function DashboardProf() {
       )}
       <Routes>
         {getRoutes(routes)}
-        <Route path="*" element={<Navigate to="/dashboard" />} />
+        <Route path="*" element={<Navigate to="/professor/dashboard" />} />
       </Routes>
     </ThemeProvider>
   );
