@@ -23,6 +23,7 @@ function App() {
           <Route path="/professor/discover" element={< DiscoverProf/>} />
           <Route  path="/*" element={< Dashboard/>} />
           <Route path="/student/courses" element={< Courses/>} />
+          <Route path="/student/categories" element={< Courses/>} />
           <Route path="/auth" element={< Auth/>} />
           <Route path="/student/courses/:courseId" element={<CourseDetails/>} />
 
