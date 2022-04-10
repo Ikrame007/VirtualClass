@@ -15,9 +15,6 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-
-          
-          
           <Route path="/" element={< Home/>} />
           <Route path="/student/discover" element={< DiscoverStudent/>} />
           <Route path="/professor/discover" element={< DiscoverProf/>} />
@@ -26,8 +23,6 @@ function App() {
           <Route path="/student/categories" element={< Courses/>} />
           <Route path="/auth" element={< Auth/>} />
           <Route path="/student/courses/:courseId" element={<CourseDetails/>} />
-
-
           <Route path="/mycourses/new-course" element={<NewCourse />} />
           <Route path="/courses/course-informations/:courseId" element={<CourseInformations />} />
         </Routes>
